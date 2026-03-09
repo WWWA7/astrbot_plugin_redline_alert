@@ -44,7 +44,7 @@ def _truncate(text: str, max_len: int) -> str:
 
 @dataclass
 class RedlineAlertTool(FunctionTool[AstrAgentContext]):
-    name: str = "redline_alert"
+    name: str = "send_redline_alert"
     description: str = (
         "工具中文名为“红线预警”。当当前对话涉及明显高风险内容时调用，尤其是政治红线、煽动颠覆、分裂国家、"
         "极端敏感现实政治、组织非法行动、严重违规引导等内容。"
@@ -85,9 +85,8 @@ class RedlineAlertTool(FunctionTool[AstrAgentContext]):
         ctx = context.context.context
         event = context.context.event
 
-        stars = ctx.get_all_stars()
         plugin = None
-        for star in stars:
+        for star in ctx.get_all_stars():
             if star.star_cls and isinstance(star.star_cls, RedlineAlertPlugin):
                 plugin = star.star_cls
                 break
