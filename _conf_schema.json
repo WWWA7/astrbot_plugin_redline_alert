@@ -1,0 +1,82 @@
+{
+  "enabled": {
+    "type": "bool",
+    "description": "是否启用红线预警工具",
+    "hint": "关闭后工具仍存在于插件中，但调用时不会真正发送预警",
+    "default": true
+  },
+  "platform": {
+    "type": "string",
+    "description": "发送平台",
+    "hint": "目前建议填写 aiocqhttp",
+    "default": "aiocqhttp"
+  },
+  "notify_user_ids": {
+    "type": "list",
+    "description": "接收预警的用户 ID 列表",
+    "hint": "填写要接收红线预警的私聊用户 ID，例如 QQ 号",
+    "default": []
+  },
+  "notify_group_ids": {
+    "type": "list",
+    "description": "接收预警的群聊 ID 列表",
+    "hint": "填写要接收红线预警的群号",
+    "default": []
+  },
+  "cooldown_seconds": {
+    "type": "int",
+    "description": "同一会话的预警冷却时间（秒）",
+    "hint": "避免同一段危险对话被重复上报刷屏",
+    "default": 300,
+    "slider": {
+      "min": 0,
+      "max": 3600,
+      "step": 10
+    }
+  },
+  "alert_title": {
+    "type": "string",
+    "description": "预警消息标题",
+    "hint": "发送到群聊或用户时显示在最上方的标题",
+    "default": "【红线预警】"
+  },
+  "include_origin": {
+    "type": "bool",
+    "description": "是否附带原会话来源信息",
+    "hint": "开启后会附带发送者 ID、群聊 ID 等上下文信息",
+    "default": true
+  },
+  "max_summary_length": {
+    "type": "int",
+    "description": "对话总结最大长度",
+    "hint": "超出部分会自动截断",
+    "default": 300,
+    "slider": {
+      "min": 50,
+      "max": 2000,
+      "step": 10
+    }
+  },
+  "max_danger_length": {
+    "type": "int",
+    "description": "危险点说明最大长度",
+    "hint": "超出部分会自动截断",
+    "default": 200,
+    "slider": {
+      "min": 30,
+      "max": 1000,
+      "step": 10
+    }
+  },
+  "max_suggestion_length": {
+    "type": "int",
+    "description": "建议处理说明最大长度",
+    "hint": "超出部分会自动截断",
+    "default": 120,
+    "slider": {
+      "min": 20,
+      "max": 500,
+      "step": 10
+    }
+  }
+}

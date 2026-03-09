@@ -1,0 +1,24 @@
+name: astrbot_plugin_redline_alert
+desc: 注册一个名为“红线预警”的 LLM 工具，当模型判断当前对话涉及政治红线等高风险内容时，自动将对话总结和危险点发送到指定群聊或用户。
+help: |
+  插件名称：红线预警
+
+  功能说明：
+  - 注册一个 LLM 工具：红线预警
+  - 当 LLM 判断当前对话明显危险时，可主动调用该工具
+  - 工具会把当前对话总结、危险点、风险等级发送给插件设置中配置的群聊或用户
+  - 支持同一会话冷却时间，避免重复刷屏
+
+  配置说明：
+  - notify_user_ids：接收预警的私聊用户 ID 列表
+  - notify_group_ids：接收预警的群聊 ID 列表
+  - cooldown_seconds：同一会话重复预警的冷却时间
+  - include_origin：是否附带发送者 ID、群聊 ID 等上下文
+  - platform：当前建议填写 aiocqhttp
+
+  使用说明：
+  - 本插件没有普通聊天指令
+  - 需要模型在对话过程中自行决定是否调用“红线预警”工具
+version: v1.0.0
+author: ciyua
+repo: https://github.com/ciyua/astrbot_plugin_redline_alert
