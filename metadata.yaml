@@ -20,5 +20,6 @@ help: |
   - 本插件没有普通聊天指令
   - 需要模型在对话过程中自行决定是否调用“红线预警”工具
 version: v1.0.0
-author: ciyua
-repo: https://github.com/ciyua/astrbot_plugin_redline_alert
+author: WWWA7
+repo: https://github.com/WWWA7/astrbot_plugin_redline_alert
+
