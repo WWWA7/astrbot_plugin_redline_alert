@@ -44,9 +44,9 @@ def _truncate(text: str, max_len: int) -> str:
 
 @dataclass
 class RedlineAlertTool(FunctionTool[AstrAgentContext]):
-    name: str = "红线预警"
+    name: str = "redline_alert"
     description: str = (
-        "当当前对话涉及明显高风险内容时调用，尤其是政治红线、煽动颠覆、分裂国家、"
+        "工具中文名为“红线预警”。当当前对话涉及明显高风险内容时调用，尤其是政治红线、煽动颠覆、分裂国家、"
         "极端敏感现实政治、组织非法行动、严重违规引导等内容。"
         "调用后会自动把当前对话的概括、危险点、风险等级发送给管理员在插件配置中预设的群聊或用户，"
         "并用于提醒系统该话题存在风险。"
